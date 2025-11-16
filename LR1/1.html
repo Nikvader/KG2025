@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторная работа 1: Цветовые модели</title>
+    <link rel="stylesheet" href="1.css">
+    <script src="1.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Левая панель для просмотра цвета -->
+        <div class="preview-panel">
+            <h1>Цветовые модели</h1>
+            <div id="color-preview"></div>
+            <label for="color-picker">Выбрать цвет из палитры</label>
+            <input type="color" id="color-picker" value="#ff0000">
+        </div>
+
+        <!-- Правая панель для всех моделей -->
+        <div class="models-panel">
+            <!-- Модель CMYK -->
+            <div class="model-group" id="cmyk-group">
+                <h3>CMYK</h3>
+                <div class="component-row">
+                    <label for="c-slider">C:</label>
+                    <input type="number" id="c-input" min="0" max="100">
+                    <input type="range" id="c-slider" min="0" max="100">
+                </div>
+                <div class="component-row">
+                    <label for="m-slider">M:</label>
+                    <input type="number" id="m-input" min="0" max="100">
+                    <input type="range" id="m-slider" min="0" max="100">
+                </div>
+                <div class="component-row">
+                    <label for="y-slider">Y:</label>
+                    <input type="number" id="y-input" min="0" max="100">
+                    <input type="range" id="y-slider" min="0" max="100">
+                </div>
+                <div class="component-row">
+                    <label for="k-slider">K:</label>
+                    <input type="number" id="k-input" min="0" max="100">
+                    <input type="range" id="k-slider" min="0" max="100">
+                </div>
+            </div>
+
+            <!-- Модель RGB -->
+            <div class="model-group" id="rgb-group">
+                <h3>RGB</h3>
+                <div class="component-row">
+                    <label for="r-slider">R:</label>
+                    <input type="number" id="r-input" min="0" max="255">
+                    <input type="range" id="r-slider" min="0" max="255">
+                </div>
+                <div class="component-row">
+                    <label for="g-slider">G:</label>
+                    <input type="number" id="g-input" min="0" max="255">
+                    <input type="range" id="g-slider" min="0" max="255">
+                </div>
+                <div class="component-row">
+                    <label for="b-slider">B:</label>
+                    <input type="number" id="b-input" min="0" max="255">
+                    <input type="range" id="b-slider" min="0" max="255">
+                </div>
+            </div>
+
+            <!-- Модель HSV -->
+            <div class="model-group" id="hsv-group">
+                <h3>HSV</h3>
+                <div class="component-row">
+                    <label for="h-slider">H:</label>
+                    <input type="number" id="h-input" min="0" max="360">
+                    <input type="range" id="h-slider" min="0" max="360">
+                </div>
+                <div class="component-row">
+                    <label for="s-slider">S:</label>
+                    <input type="number" id="s-input" min="0" max="100">
+                    <input type="range" id="s-slider" min="0" max="100">
+                </div>
+                <div class="component-row">
+                    <label for="v-slider">V:</label>
+                    <input type="number" id="v-input" min="0" max="100">
+                    <input type="range" id="v-slider" min="0" max="100">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
