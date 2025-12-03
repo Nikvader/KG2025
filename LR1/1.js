@@ -2,6 +2,14 @@ function rgbToCmyk(r, g, b) {
     if (r === 0 && g === 0 && b === 0) {
         return { c: 0, m: 0, y: 0, k: 100 };
     }
+    if(r>255){r=255}
+    if(r<0){r=0}
+    if(g>255){g=255}
+    if(g<0){g=0}
+    if(b>255){b=255}
+    if(b<0){b=0}
+
+    
     let c = 1 - (r / 255);
     let m = 1 - (g / 255);
     let y = 1 - (b / 255);
@@ -13,6 +21,14 @@ function rgbToCmyk(r, g, b) {
 }
 
 function cmykToRgb(c, m, y, k) {
+        if(c>100){c=100}
+        if(c<0){c=0}
+        if(m>100){m=100}
+        if(m<0){m=0}
+        if(y>100){y=100}
+        if(y<0){y=0}
+        if(k>100){k=100}
+        if(k<0){k=0}
     c /= 100; m /= 100; y /= 100; k /= 100;
     const r = Math.round(255 * (1 - c) * (1 - k));
     const g = Math.round(255 * (1 - m) * (1 - k));
@@ -21,6 +37,12 @@ function cmykToRgb(c, m, y, k) {
 }
 
 function rgbToHsv(r, g, b) {
+        if(r>255){r=255}
+    if(r<0){r=0}
+    if(g>255){g=255}
+    if(g<0){g=0}
+    if(b>255){b=255}
+    if(b<0){b=0}
     r /= 255; g /= 255; b /= 255;
     let max = Math.max(r, g, b), min = Math.min(r, g, b);
     let h, s, v = max;
@@ -40,6 +62,13 @@ function rgbToHsv(r, g, b) {
 }
 
 function hsvToRgb(h, s, v) {
+    if(h<0){h=0}
+    if(h>360){h=360}
+    if(s<0){s=0}
+    if(s>360){s=100}
+    if(v<0){v=0}
+    if(v>100){v=100}
+
     h /= 360; s /= 100; v /= 100;
     let r, g, b;
     let i = Math.floor(h * 6);
